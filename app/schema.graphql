@@ -1,0 +1,33 @@
+scalar Date
+
+type Date{
+    day: Int
+    month: Int
+    year: Int
+}
+
+type Cosmonaut{
+    id: ID
+    firstName: String
+    lastName: String
+    dateOfBirth: Date
+    superpower: String
+}
+input cosmonautInput{
+    id: ID
+    firstName: String
+    lastName: String
+    dateOfBirth: String
+    superpower: String
+}
+type Query {
+    cosmonauts(id: ID) : [Cosmonaut]
+    cosmonautByID(id:ID) : Cosmonaut
+
+}
+
+type Mutation {
+    addCosmonaut(input: cosmonautInput): Cosmonaut
+    editCosmonaut(id: ID, updated: cosmonautInput): Cosmonaut
+}
+
