@@ -10,6 +10,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 
 /**
@@ -41,20 +42,20 @@ class Cosmonaut
     private $dateOfBirth;
 
     /**
-     * @ORM\OneToMany(targetEntity="superpower", mappedBy="id")
+     * @ORM\ManyToOne(targetEntity="Superpower",cascade={"persist"})
      */
     private $superpower;
 
     public function __construct()
     {
-        $this->superpower = new  ArrayCollection();
+
     }
 
 
     public function __toString()
     {
-        return $this->id . " " . $this->firstName . " " . $this->surname . "\nDate of Birth: " . $this->dateOfBirth
-            . "   Superpower: " . $this->superpower;
+        return $this->id . " " . $this->firstName . " " . $this->surname . " Date of Birth: "
+            . $this->dateOfBirth->format('d.m.Y')   . "   Superpower: " ;
     }
 
     /**
@@ -110,7 +111,7 @@ class Cosmonaut
      */
     public function getDateOfBirth()
     {
-        return $this->dateOfBirth;
+        return $this->dateOfBirth->format('d.m.Y');
     }
 
     /**
@@ -137,18 +138,5 @@ class Cosmonaut
         $this->superpower = $superpower;
     }
 
-    public function addSuperpower($superpower){
-        $this->superpower[] = $superpower;
-    }
 
-    /**Returns sum of cosmonaut's superpower's levels
-     * @return int
-     */
-    public function getAbsolutePowerLevel(){
-        $powerLevel = 0;
-        foreach ($this->superpower as $power){
-            $powerLevel = $power->getStrengthLevel();
-        }
-        return $powerLevel;
-    }
 }

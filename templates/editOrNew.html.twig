@@ -1,0 +1,70 @@
+<style>
+    .form-row-wrapper{
+        position:fixed;
+        left:+40%;
+    }
+
+    .submenu_item{
+        position:fixed;
+        top: +25%;
+        left:+40%;
+    }
+    .alert-success{
+        position:fixed;
+        top: +20%;
+        left:+40%;
+    }
+</style>
+
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}WCD{% endblock %}</title>
+    </head>
+    <body style="align-content: center">
+
+    <h3 align="center">Please enter relevant information</h3>
+    {% for message in app.flashes('success') %}
+        <div class="alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+        {% block body %}
+    {{ form_start(editOrNewForm) }}
+    <div class="form-row-wrapper">
+
+        <div class="form-action-wrapper">
+            First name
+            {{ form_widget(editOrNewForm.firstName) }}
+        </div>
+        <div class="form-action-wrapper">
+            Surname:
+            {{ form_widget(editOrNewForm.surname) }}
+        </div>
+        <div class="form-action-wrapper">
+            Date of birth:
+            {{ form_widget(editOrNewForm.dateOfBirth) }}
+        </div>
+        <div class="form-action-wrapper">
+            Superpower:
+            {{ form_widget(editOrNewForm.superpower) }}
+        </div>
+        <div class="form-action-wrapper">
+            {{ form_widget(editOrNewForm.save) }}
+        </div>
+    </div>
+    {{ form_end(editOrNewForm) }}
+
+        <a class="submenu_item" href={{ path("index")}}>
+            <button type="button" style="background-color: #5eb5e0;" >Return to list the of cosmonauts</button>
+        </a>
+        {% endblock %}
+
+
+    </body>
+
+</html>

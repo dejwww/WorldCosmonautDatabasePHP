@@ -11,6 +11,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="superpower")
@@ -27,10 +28,7 @@ class Superpower
      * @ORM\Column(name="name", type="string", length=50, nullable=false)
      */
         private $name;
-    /**
-     * @ORM\Column(name="strength_level", type="integer", nullable=false)
-     */
-        private $strengthLevel;
+
 
         public function __toString()
         {
@@ -73,20 +71,5 @@ class Superpower
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getStrengthLevel()
-    {
-        return $this->strengthLevel;
-    }
-
-    /**
-     * @param mixed $strengthLevel
-     */
-    public function setStrengthLevel($strengthLevel): void
-    {
-        $this->strengthLevel = $strengthLevel;
-    }
 
 }
