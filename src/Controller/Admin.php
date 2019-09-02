@@ -16,7 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class Admin extends AbstractController
 {
 
-    /**
+
+/**
      * @Route(path="/", name="index")
      * @return Response
      */
@@ -30,10 +31,9 @@ class Admin extends AbstractController
     /**
      * @Route("/addOrEdit",name="add_edit")
      * @param Request $request
-     * @param EntityManagerInterface $entityManager
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function editOrNew(Request $request, EntityManagerInterface $entityManager)
+    public function editOrNew(Request $request)
     {  $id = $request->get("cosmonaut");
         if ($id == 0) {
             $cosmonaut = new  Cosmonaut();

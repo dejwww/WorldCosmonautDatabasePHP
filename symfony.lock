@@ -108,6 +108,9 @@
             "./config/packages/fos_rest.yaml"
         ]
     },
+    "heroku/heroku-buildpack-php": {
+        "version": "v161"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
