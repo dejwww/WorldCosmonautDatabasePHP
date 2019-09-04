@@ -3,7 +3,7 @@
 # mod_rewrite). Additionally, this reduces the matching process for the
 # start page (path "/") because otherwise Apache will apply the rewriting rules
 # to each configured DirectoryIndex file (e.g. mainphp, main.html, main.pl).
-DirectoryIndex index.php
+DirectoryIndex Main.php
 
 # By default, Apache does not evaluate symbolic links if you did not enable this
 # feature in your server configuration. Uncomment the following line if you
@@ -14,7 +14,7 @@ DirectoryIndex index.php
 # Disabling MultiViews prevents unwanted negotiation, e.g. "/main" should not resolve
 # to the front controller "/mainphp" but be rewritten to "/main.phpmain".
 <IfModule mod_negotiation.c>
-    Options -MultiViews +Indexes
+    Options -MultiViews
 </IfModule>
 
 <IfModule mod_rewrite.c>
