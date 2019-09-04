@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class Main extends AbstractController
 {
-
     /**
      * @Route(path="/", name="main")
      * @return Response
