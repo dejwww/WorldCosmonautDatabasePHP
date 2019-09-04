@@ -17,16 +17,6 @@ class Admin extends AbstractController
 {
 
 
-/**
-     * @Route(path="/", name="index")
-     * @return Response
-     */
-    public function index(){
-
-        return $this->render(
-            'base.html.twig',
-            ["cosmonauts" => $this->getDoctrine()->getRepository(Cosmonaut::class)->findAll()]);
-    }
 
     /**
      * @Route("/addOrEdit",name="add_edit")
