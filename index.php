@@ -13,7 +13,7 @@ class index extends AbstractController
      * @Route(path="/", name="index")
      * @return Response
      */
-    public function index(){
+    public function main(){
 
         return $this->render(
             'base.html.twig',
