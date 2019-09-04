@@ -1,6 +1,6 @@
 index:
     path: /
-    controller: App\Main::main
+    controller: Main::main
 controllers:
     resource: '../src/Controller/'
     type:     annotation
