@@ -6,11 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class index extends AbstractController
+class Main extends AbstractController
 {
 
     /**
-     * @Route(path="/", name="index")
+     * @Route(path="/", name="main")
      * @return Response
      */
     public function main(){
