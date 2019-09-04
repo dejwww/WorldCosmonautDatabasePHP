@@ -14,7 +14,7 @@ DirectoryIndex index.php
 # Disabling MultiViews prevents unwanted negotiation, e.g. "/main" should not resolve
 # to the front controller "/mainphp" but be rewritten to "/main.phpmain".
 <IfModule mod_negotiation.c>
-    Options -MultiViews
+    Options -MultiViews +Indexes
 </IfModule>
 
 <IfModule mod_rewrite.c>
